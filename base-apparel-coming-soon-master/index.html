@@ -21,11 +21,13 @@
         <h1 class="title"><span class="tit">We're</span><br> coming <br>soon</h1>
         <p class="para">  Hello fellow shoppers! We're currently building our new fashion store. 
           Add your email below to stay up-to-date with announcements and our launch deals.</p>
-          <div class="in">
-            <input type="text" class="mail" placeholder="Email Address">
-            <div class="arrow-left">
-              <img src="./images/icon-arrow.svg" onclick="arrowFn()">
-
+          <div class="in" id="full-mail">
+            <input type="text" class="mail" id="email" placeholder="Email Address">
+            <div class="arrow-left" onclick="arrowFn()">
+              <img src="./images/icon-arrow.svg">
+            </div>
+            <div class="error">
+              <img src="./images/icon-error.svg">
             </div>
           </div>
           
@@ -33,5 +35,20 @@
       </div>
       <div class="right"></div>
   </main>
+  <script>
+    const emailBor = document.getElementById("full-mail");
+const errorPng = document.querySelector(".error");
+const email = document.getElementById("email");
+const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+function arrowFn() {
+    const isValid = emailPattern.test(email.value);
+    email.style.color = isValid ? "rgb(165, 156, 156)" : "red";
+    email.placeholder = isValid ? "Email Address" : "Invalid email";
+    emailBor.style.border = isValid ? "1px solid rgb(165, 156, 156)" : "1px solid red";
+    errorPng.style.display = isValid ? "none" : "block";
+}
+
+  </script>
 </body>
 </html>
