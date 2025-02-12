@@ -26,7 +26,7 @@ body {
 .title{
     text-transform: uppercase;
     letter-spacing: 10px;
-    font-size:5vw;
+    font-size:4.6vw;
     font-weight: 600;
     line-height: 1;
     margin-bottom: 0;
@@ -49,6 +49,7 @@ body {
 
 }
 .para{
+    font-size:1.5vw;
     line-height: 1.4;
     width:70%;
     color:var(--desaturated-red);
@@ -62,22 +63,24 @@ body {
 
 }
 .navy {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 .navy1{
     display: none;
 }
 .in{
+    user-select: none;
     display: flex;
     align-items: center;
     position: relative;
     border-radius: 100px;
     border: 1px solid rgb(165, 156, 156);
-    width:400px;
+    width:70%;
     height: 40px;
     padding: 2px 20px;
 }
 .in input{
+    font-size: 1.2rem;
     background-color: transparent;
     outline: none;
     border: none;
@@ -88,6 +91,9 @@ body {
     font-family: "Josefin Sans", serif;
     font-weight: 500;
 }
+.placeholder-red::-webkit-input-placeholder {
+    color: red;
+  }
 .arrow-left{
     box-shadow: 5px 10px 18px 1px rgba(255, 167, 167, 0.459);
     position: absolute;
@@ -100,7 +106,16 @@ body {
     border-radius: 100px;
     background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));;
 }
-@media (width<451px){
+.arrow-left:hover{
+    background-image: linear-gradient(135deg, hsl(0, 65%, 83%), hsl(0, 77%, 71%));
+    cursor: pointer;
+}
+.error{
+    position: absolute;
+    right:-34px;
+    display: none;
+}
+@media (width<768px){
     html{
         font-size: 12px;
     }
@@ -131,7 +146,7 @@ body {
         margin: 0 auto;
     }
     .para{
-        font-size: 1.1rem;
+        font-size: 3.4vw !important;
         width:95%;
         margin: 10px auto;
         text-align: center;
@@ -142,16 +157,26 @@ body {
     .title{
         margin-top: 60px;
         text-align: center;
-        font-size: 3.6rem;
+        font-size: 8.7vw !important;
     }
     .in{
         margin:28px auto;
-        width:250px;
         height: 40px;
         padding: 2px 20px;
     }
     .arrow-left{
         width:65px;
         height: 44px;
+    }
+}
+@media(width<992px){
+    html{
+        font-size: 14px;
+    }
+    .title{
+        font-size:5.7vw;
+    }
+    .para{
+        font-size:1.8vw;
     }
 }
